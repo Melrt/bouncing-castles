@@ -1,5 +1,28 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  resource :profile, only: [:show]
+
+  #controllerS en tant que player
+  resources :bouncing_castles, only: [:index, :show] do
+    resources :rentals, only: [:new, :create]
+  end
+
+  resources :rentals, only: [:index]
+
+  # controller en tant que renter
+
+  namespace :renter do
+    resource :dashboard, only: [:show]
+  #=> par defaut il n'y a qu'un seul dashboard par 'renter'
+  #=> donc : singulier, pas d'index et pas d'id par dashboard
+    resources :bouncing_castles, only: [:new, :create]
+    resources :rentals, only: [] do
+      member do
+        patch :accept
+        patch :deny
+      end
+    end
+  end
 end
