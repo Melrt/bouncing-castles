@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :castles, foreign_key: :renter_id
+  has_many :rentals, foreign_key: :player_id
 
   # validates :email, presence: true, uniqueness: true => cf schema, inherited from devise
   validates :first_name, presence: true
