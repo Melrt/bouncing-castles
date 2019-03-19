@@ -13,7 +13,7 @@
     <!-- implementer apres faire le navbar devise_controller? ||  -->
     <%= render 'shared/navbar' unless controller_name == 'pages'%>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+      <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
