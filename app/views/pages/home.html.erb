@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class='wrapper'>
+  <div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_2.png" %>);">
+    <div class="container text-align">
+      <div class="body-banner">
+        <h1>TIGGER'S BOUNCE</h1>
+        <p>Every cool party starts with a bounce</p>
+        <button class="btn btn-primary"><strong>Find a castle</strong></button>
+      </div>
+      <div class="connexion-bar">
+      <%= link_to "Log in", new_user_session_path, class: "btn"%>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn"%>
+      </div>
+    </div>
+  </div>
+</div>
