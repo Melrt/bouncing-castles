@@ -1,8 +1,8 @@
 # stocke les img dans db/fixtures/users/patricia.jpg
 
 puts 'cleaning database...'
-User.destroy_all
 Castle.destroy_all # rentals table dependent destroy
+User.destroy_all
 
 puts 'creating users...'
 alex = User.create!(
@@ -24,7 +24,7 @@ paola = User.create!(
   password: 'tigggr',
   first_name: 'Paola',
   last_name: 'Griz',
-  avatar: File.open(Rails.root.join('db/fixtures/users/diane.jpg')),
+  avatar: File.open(Rails.root.join('db/fixtures/users/diane.png')),
 )
 
 puts 'creating castles and rental orders'
@@ -144,43 +144,43 @@ puts "Creating rentails..."
 
 rental = Rental.create!(
   player: alex,
-  castle: tigger_castle
+  castle: tigger_castle,
   status: 'pending',
   total_price: 240,
-  start_on: 2019-03-25,
-  ends_on: 2019-03-26,
+  starts_on: '2019-03-25',
+  ends_on: '2019-03-26',
 )
 rental = Rental.create!(
   player: alex,
-  castle: wizard_castle
+  castle: wizard_castle,
   status: 'pending',
   total_price: 800,
-  start_on: 2019-03-25,
-  ends_on: 2019-03-26,
+  starts_on: '2019-03-25',
+  ends_on: '2019-03-26',
 )
 rental = Rental.create!(
   player: alex,
-  castle: moon_walk_castle
+  castle: moon_walk_castle,
   status: 'accepted',
   total_price: 600,
-  start_on: 2019-03-25,
-  ends_on: 2019-03-26,
+  starts_on: '2019-03-25',
+  ends_on: '2019-03-26',
 )
 rental = Rental.create!(
   player: paola,
-  castle: camelot_castle
+  castle: camelot_castle,
   status: 'accepted',
   total_price: 300,
-  start_on: 2019-03-22,
-  ends_on: 2019-03-24,
+  starts_on: '2019-03-22',
+  ends_on: '2019-03-24',
 )
 rental = Rental.create!(
   player: paola,
-  castle: unicorn_castle
+  castle: unicorn_castle,
   status: 'denied',
   total_price: 420,
-  start_on: 2019-03-22,
-  ends_on: 2019-03-24,
+  starts_on: '2019-03-22',
+  ends_on: '2019-03-24',
 )
 
 puts 'Finished!'
