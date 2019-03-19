@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :profile, only: [:show]
 
   #controllerS en tant que player
-  resources :bouncing_castles, only: [:index, :show] do
+  resources :castles, only: [:index, :show] do
     resources :rentals, only: [:new, :create]
   end
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
   #=> par defaut il n'y a qu'un seul dashboard par 'renter'
   #=> donc : singulier, pas d'index et pas d'id par dashboard
-    resources :bouncing_castles, only: [:new, :create]
+    resources :castles, only: [:new, :create]
     resources :rentals, only: [] do
       member do
         patch :accept
