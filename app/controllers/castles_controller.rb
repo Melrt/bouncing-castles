@@ -1,5 +1,5 @@
 class CastlesController < ApplicationController
-# TO DO : add before_action
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @castles = Castle.all
   end
