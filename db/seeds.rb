@@ -107,7 +107,7 @@ castle = Castle.create!(
   photo: File.open(Rails.root.join('db/fixtures/castles/hamburger_castle.jpg')),
   day_price: 200,
   address: 'Marseille',
-  renter: alex,
+  renter: francine,
 )
 castle = Castle.create!(
   name: "Farm castle",
