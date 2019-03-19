@@ -8,6 +8,11 @@ gem 'puma'
 gem 'rails', '5.2.2.1'
 gem 'redis'
 
+# My gems
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.6.1'
