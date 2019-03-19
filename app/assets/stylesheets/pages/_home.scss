@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.body-banner {
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 24px;
+    font-weight: lighter;
+    opacity: 0.8;
+  }
+}
+
+.connexion-bar {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+    .btn {
+      color: white;
+      font-size: 20px;
+      margin-right: 10px;
+     &:hover {
+      color: white;
+      border-top: solid 2px white;
+      border-bottom: solid 2px white;
+    }
+  }
+}
