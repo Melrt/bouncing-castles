@@ -29,7 +29,7 @@ paola = User.create!(
 
 puts 'creating castles and rental orders'
 
-castle = Castle.create!(
+camelot_castle = Castle.create!(
   name: "Camelot's castle",
   available: true,
   nb_players: 4,
@@ -37,19 +37,19 @@ castle = Castle.create!(
   photo: File.open(Rails.root.join('db/fixtures/castles/camelot_castle.jpg')),
   day_price: 100,
   address: 'Nantes',
-  renter: paola,
+  renter: francine,
 )
-castle = Castle.create!(
+tigger_castle = Castle.create!(
   name: "Tigger's belly castle",
   available: true,
   nb_players: 8,
   description: "Let's play with our mascot! Awesome for 6-10 years-old :)",
   photo: File.open(Rails.root.join('db/fixtures/castles/tigger_castle.jpg')),
   day_price: 120,
-  address: 'Nantes',
+  address: 'Marseille',
   renter: paola,
 )
-castle = Castle.create!(
+wizard_castle = Castle.create!(
   name: "Wizard's castle",
   available: true,
   nb_players: 12,
@@ -59,7 +59,7 @@ castle = Castle.create!(
   address: 'Marseille',
   renter: francine,
 )
-castle = Castle.create!(
+moon_walk_castle = Castle.create!(
   name: "Moon Walk castle",
   available: true,
   nb_players: 11,
@@ -107,7 +107,7 @@ castle = Castle.create!(
   photo: File.open(Rails.root.join('db/fixtures/castles/hamburger_castle.jpg')),
   day_price: 200,
   address: 'Marseille',
-  renter: francine,
+  renter: alex,
 )
 castle = Castle.create!(
   name: "Farm castle",
@@ -117,9 +117,9 @@ castle = Castle.create!(
   photo: File.open(Rails.root.join('db/fixtures/castles/farm_castle.jpg')),
   day_price: 130,
   address: 'Marseille',
-  renter: alex,
+  renter: paola,
 )
-castle = Castle.create!(
+unicorn_castle = Castle.create!(
   name: "Unicorn castle",
   available: true,
   nb_players: 6,
@@ -127,9 +127,9 @@ castle = Castle.create!(
   photo: File.open(Rails.root.join('db/fixtures/castles/unicorn_castle.jpg')),
   day_price: 210,
   address: 'Nantes',
-  renter: paola,
+  renter: francine,
 )
-castle = Castle.create!(
+frozen_castle = Castle.create!(
   name: "Frozen castle",
   available: true,
   nb_players: 6,
@@ -140,3 +140,45 @@ castle = Castle.create!(
   renter: francine,
 )
 
+puts "Creating rentails..."
+
+rental = Rental.create!(
+  player: alex,
+  castle: tigger_castle
+  status: 'pending',
+  total_price: 240,
+  start_on: 2019-03-25,
+  ends_on: 2019-03-26,
+)
+rental = Rental.create!(
+  player: alex,
+  castle: wizard_castle
+  status: 'pending',
+  total_price: 800,
+  start_on: 2019-03-25,
+  ends_on: 2019-03-26,
+)
+rental = Rental.create!(
+  player: alex,
+  castle: moon_walk_castle
+  status: 'accepted',
+  total_price: 600,
+  start_on: 2019-03-25,
+  ends_on: 2019-03-26,
+)
+rental = Rental.create!(
+  player: paola,
+  castle: camelot_castle
+  status: 'accepted',
+  total_price: 300,
+  start_on: 2019-03-22,
+  ends_on: 2019-03-24,
+)
+rental = Rental.create!(
+  player: paola,
+  castle: unicorn_castle
+  status: 'denied',
+  total_price: 420,
+  start_on: 2019-03-22,
+  ends_on: 2019-03-24,
+)
