@@ -182,3 +182,5 @@ rental = Rental.create!(
   start_on: 2019-03-22,
   ends_on: 2019-03-24,
 )
+
+puts 'Finished!'
