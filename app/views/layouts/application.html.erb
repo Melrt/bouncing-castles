@@ -10,7 +10,6 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <!-- implementer apres faire le navbar devise_controller? ||  -->
     <%= render 'shared/navbar' unless controller_name == 'pages'%>
     <%= render 'shared/flashes' %>
       <%= yield %>
