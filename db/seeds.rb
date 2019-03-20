@@ -54,7 +54,7 @@ wizard_castle = Castle.create!(
   available: true,
   nb_players: 12,
   description: "Let's make magic!",
-  photo: File.open(Rails.root.join('db/fixtures/castles/camelot_castle.jpg')),
+  photo: File.open(Rails.root.join('db/fixtures/castles/wizard_castle.jpg')),
   day_price: 400,
   address: 'Marseille',
   renter: francine,
@@ -139,9 +139,27 @@ frozen_castle = Castle.create!(
   address: 'Nantes',
   renter: francine,
 )
+castle = Castle.create!(
+  name: "Jungle castle",
+  available: true,
+  nb_players: 6,
+  description: "Go into the wilderness!",
+  photo: File.open(Rails.root.join('db/fixtures/castles/jungle_castle.jpg')),
+  day_price: 190,
+  address: 'Nantes',
+  renter: francine,
+)
 
 puts "Creating rentails..."
 
+rental = Rental.create!(
+  player: francine,
+  castle: tigger_castle,
+  status: 'accepted',
+  total_price: 240,
+  starts_on: '2019-03-01',
+  ends_on: '2019-03-02',
+)
 rental = Rental.create!(
   player: alex,
   castle: tigger_castle,
