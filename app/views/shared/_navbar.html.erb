@@ -10,29 +10,7 @@
           Home
         <% end %>
       </li>
-      <% if user_signed_in? %>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= user.first_name user.last_name %>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-          <%= link_to "Profile", "#", class: "dropdown-item"%>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      </li>
-      <% else %>
-        <li class="nav-item active">
-          <%= link_to user_session_path, class: "nav-link" do %>
-            Log in
-          <% end %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to new_user_registration_path, class: "nav-link" do %>
-            Sing in
-          <% end %>
-        </li>
-      <% end %>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="ex: London..." aria-label="Search">
