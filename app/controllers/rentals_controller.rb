@@ -1,4 +1,9 @@
 class RentalsController < ApplicationController
+
+  def index
+    @rentals = current_user.rentals
+  end
+
   def new
     @rental = Rental.new
     @castle = Castle.find(params[:castle_id])
