@@ -4,17 +4,38 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to root_path, class: "nav-link" do %>
-          Home
-        <% end %>
-      </li>
-
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", class: "rounded-circle" %>
+    <% end %>
+    <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="ex: London..." aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
+
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropleft ml-auto">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= cl_image_tag current_user.avatar, class: "rounded-circle navbar-avatar" %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Dashboard", renter_dashboard_path, class: "dropdown-item" %>
+            <%= link_to "Profile", profile_path, class: "dropdown-item"%>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item nav-right">
+          <%= link_to user_session_path, class: "nav-link" do %>
+            Log in
+          <% end %>
+        </li>
+        <li class="nav-item nav-right">
+          <%= link_to new_user_registration_path, class: "nav-link" do %>
+            Sign up
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>
