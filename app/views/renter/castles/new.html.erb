@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="mt-3 text-center">New Bouncing Castle</h2>
+      <%= simple_form_for @new_castle do |f| %>
+        <%= f.input :name %>
+        <%= f.input :avaliable %>
+        <%= f.input :nb_players %>
+        <%= f.input :description %>
+        <%= f.input :day_price %>
+        <%= f.input :address %>
+        <%= f.submit "Add a bouncing castle", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
