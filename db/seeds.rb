@@ -153,6 +153,14 @@ castle = Castle.create!(
 puts "Creating rentails..."
 
 rental = Rental.create!(
+  player: francine,
+  castle: tigger_castle,
+  status: 'accepted',
+  total_price: 240,
+  starts_on: '2019-03-01',
+  ends_on: '2019-03-02',
+)
+rental = Rental.create!(
   player: alex,
   castle: tigger_castle,
   status: 'pending',
