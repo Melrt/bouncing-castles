@@ -1,0 +1,36 @@
+.description-quote {
+  text-align: center;
+  margin: 3px;
+  font-family: 'Lobster', cursive;
+  font-size: 23px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 45px;
+  padding: 0px;
+}
+
+.badge-status-available {
+  background-color: $yellow;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.badge-status-invalid {
+  background-color: $red;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.badge-nb-player {
+  padding: 3px;
+  border-radius: 4px;
+  background-color: $light;
+}

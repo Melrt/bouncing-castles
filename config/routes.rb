@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'rentals/new'
+  get 'rentals/create'
   root to: 'pages#home'
   devise_for :users
 
