@@ -10,5 +10,4 @@ class CastlesControllerTest < ActionDispatch::IntegrationTest
     get castles_show_url
     assert_response :success
   end
-
 end
