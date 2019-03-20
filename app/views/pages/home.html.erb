@@ -4,7 +4,7 @@
       <div class="body-banner">
         <h1>TIGGER'S BOUNCE</h1>
         <p>Every cool party starts with a bounce</p>
-        <button class="btn btn-primary"><strong>Find a castle</strong></button>
+        <%= link_to 'Find a castle', castles_path, class: 'btn btn-primary font-weight-bold' %>
       </div>
       <div class="connexion-bar">
       <%= link_to "Log in", new_user_session_path, class: "btn"%>
