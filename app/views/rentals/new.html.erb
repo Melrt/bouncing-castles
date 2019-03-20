@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2>Ask to rent <%= @castle.name %></h2>
+      <%= simple_form_for [@castle, @rental] do |f| %>
+        <%= f.input :starts_on %>
+        <%= f.input :ends_on %>
+        <%= f.submit "Rent", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

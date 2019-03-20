@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="card-title"><%= @castle.name %></h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="photo ml-2 mt-2 mr-0">
+              <%= cl_image_tag @castle.photo, width: 800, crop: :fill, class: 'card-img-top' %>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="content">
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <% if @castle.available == true %>
+                      <span class="badge-status-available"><%= "Available !" %> </span>
+                      <% else %>
+                      <span class="badge-status-invalid"> <%= "Already reversed.." %> </span>
+                      <% end %>
+                    </div>
+                    <br>
+                    <div class="col-sm-6">
+                      <span class="badge-nb-player"> <i class="fas fa-running"></i> <%= @castle.nb_players %> players </span>
+                    </div>
+                    <div class="description-quote mt-5">
+                      <p>"<%= @castle.description %>"</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6 offest-sm-3">
+                    <%= link_to 'rent', new_castle_rental_path(@castle), class: 'btn btn-warning'%>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <br>
+
+          <br>
+          <div class="card-footer">
+            <div>
+              <i class="fas fa-map-marker-alt"></i> <%= @castle.address %>
+            </div>
+            <br>
+            <div>
+              <%= @castle.day_price %>€ / day
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
