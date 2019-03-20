@@ -6,4 +6,5 @@ class CastlesController < ApplicationController
 
   def show
   end
+
 end
