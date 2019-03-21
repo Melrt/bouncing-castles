@@ -16,9 +16,17 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropleft ml-auto">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= cl_image_tag current_user.avatar, class: "rounded-circle navbar-avatar" %>
-          </a>
+
+          <% if current_user.avatar.file.nil? %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "default_avatar.png", width: 50, height:50, class: "rounded-circle" %>
+            </a>
+          <% else %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= cl_image_tag current_user.avatar, width: 50, height:50, class: "rounded-circle navbar-avatar" %>
+            </a>
+          <% end %>
+
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", renter_dashboard_path, class: "dropdown-item" %>
             <%= link_to "My rental orders", rentals_path, class: "dropdown-item" %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
 
-  resource :profile, only: [:show]
+  resource :profile, only: [:show, :update]
 
   #controllerS en tant que player
   resources :castles, only: [:index, :show] do
