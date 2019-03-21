@@ -1,5 +1,4 @@
 class RentalsController < ApplicationController
-
   def index
     @rentals = current_user.rentals
   end
@@ -13,8 +12,8 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     @rental.castle = Castle.find(params[:castle_id])
     @rental.player = current_user
-    if @rental.save!
-      redirect_to castles_path
+    if @rental.save
+      redirect_to rentals_path
     else
       render :new
     end

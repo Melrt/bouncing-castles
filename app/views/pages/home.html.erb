@@ -4,11 +4,13 @@
       <div class="body-banner">
         <h1>TIGGER'S BOUNCE</h1>
         <p>Every cool party starts with a bounce</p>
-        <%= link_to 'Find a castle', castles_path, class: 'btn btn-primary font-weight-bold' %>
+        <%= link_to 'Find a castle', castles_path, class: 'btn btn-info font-weight-bold' %>
       </div>
       <div class="connexion-bar">
-      <%= link_to "Log in", new_user_session_path, class: "btn"%>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn"%>
+        <% unless user_signed_in? %>
+          <%= link_to "Log in", new_user_session_path, class: "btn"%>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn"%>
+        <% end %>
       </div>
     </div>
   </div>
