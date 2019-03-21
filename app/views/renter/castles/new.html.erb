@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="mt-3 text-center">My new bouncing castle</h2>
+      <%= simple_form_for [:renter, @new_castle] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :available %>
+        <%= f.input :nb_players, collection: 1..100 %>
+        <%= f.input :description %>
+        <%= f.input :day_price %>
+        <%= f.input :address %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+
+        <%= f.submit "Add a Bouncing Castle!!!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<!-- renter_castles_path POST /renter/castles(.:format) renter/castles#create
+new_renter_castle_path  GET   /renter/castles/new(.:format)  renter/castles#new
+
+No route matches [POST] "/castles" -->
