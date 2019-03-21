@@ -7,6 +7,7 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", class: "rounded-circle" %>
     <% end %>
+    <%= link_to 'All castles', castles_path, class: 'navbar-brand font-weight-bold ml-2' %>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="ex: London..." aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -20,6 +21,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", renter_dashboard_path, class: "dropdown-item" %>
+            <%= link_to "My rental orders", rentals_path, class: "dropdown-item" %>
             <%= link_to "Profile", profile_path, class: "dropdown-item"%>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

@@ -11,20 +11,20 @@
   justify-content: space-around;
 }
 
-.card-title {
+.card-title-show-castle {
   text-align: center;
   font-size: 45px;
   padding: 0px;
 }
 
 .badge-status-available {
-  background-color: $yellow;
+  background-color: $success;
   padding: 3px;
   border-radius: 4px;
 }
 
 .badge-status-invalid {
-  background-color: $red;
+  background-color: $danger;
   padding: 3px;
   border-radius: 4px;
 }

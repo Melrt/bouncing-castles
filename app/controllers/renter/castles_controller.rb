@@ -3,7 +3,7 @@ class Renter::CastlesController < ApplicationController
     @current_user = current_user
     @new_castle = Castle.new
   end
-
+  
   def create
     @new_castle = Castle.new(new_castle_params)
     @new_castle.renter = current_user
