@@ -1,0 +1,62 @@
+.notification-dashboard {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+
+  .color-success {
+    color: $success;
+  }
+  .color-deny {
+    color: $danger;
+  }
+
+  &:hover {
+    transition-duration: 250ms;
+    animation-timing-function: ease-in-out;
+    // transition-property: box-shadow, transform;
+    box-shadow: 0px 0px 3px $medium-grey;
+    transform: scale(1.05);
+
+  }
+
+  .notification-content {
+    flex-grow: 1;
+    padding: 0 24px;
+  }
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  small {
+    color: $secondary;
+    font-weight: bold;
+  }
+  .notification-status {
+    flex: 0 0 50px;
+
+  }
+  .notification-actions {
+    flex: 0 0 80px;
+    display: flex;
+    transition: ease .3s;
+    font-size: 24px;
+    a {
+      color: $secondary;
+      margin-left: 16px;
+    }
+    .accept:hover {
+      color: $success;
+    }
+    .deny:hover {
+      color: $danger;
+    }
+  }
+}
+
+
+
+
