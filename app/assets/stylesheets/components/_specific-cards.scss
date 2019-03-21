@@ -12,6 +12,14 @@
   padding: 5px;
 }
 
+.profile-card {
+  background-color: $white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
 .card-index-link:hover {
   text-decoration: none;
   color: $dark-blue;
@@ -55,4 +63,3 @@
   padding: 10px 0;
   position: relative;
 }
-

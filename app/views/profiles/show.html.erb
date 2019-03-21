@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 mt-5 profile-card">
+      <div class="profile-photo-avatar">
+        <% if current_user.avatar.file.nil? %>
+          <%= image_tag "default_avatar.png", width: 150, height: 150, class: "rounded-circle" %>
+        <% else %>
+          <%= cl_image_tag @user.avatar , width: 150, height: 150, crop: :fill, class: "rounded-circle" %>
+        <% end %>
+      </div>
+      <div class="profile-details-text">
+        <h1><%= @user.first_name + " " + @user.last_name %></h1>
+        <h2><%= @user.email %></h2>
+        <p>Member since: <%= @user.created_at.strftime("%d / %m / %Y") %></p>
+        <%= simple_form_for @user, url: profile_path do |f| %>
+          <%= f.input :avatar, label: false %>
+          <%= f.input :avatar_cache, as: :hidden %>
+          <%= f.submit "Change avatar", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
