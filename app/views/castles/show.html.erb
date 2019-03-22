@@ -1,58 +1,40 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 offset-sm-2">
-      <div class="card m-3">
-        <div class="card-header">
-          <h1 class="card-title-show-castle"><%= @castle.name %></h1>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="photo ml-2 mt-2 mr-0">
-              <%= cl_image_tag @castle.photo, width: 350, height: 350, crop: :fill %>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="content">
-              <div class="card-body">
-                <div class="card-text">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <% if @castle.available == true %>
-                      <span class="badge-status-available"><%= "Available !" %> </span>
-                      <% else %>
-                      <span class="badge-status-invalid"> <%= "Already reversed.." %> </span>
-                      <% end %>
-                    </div>
-                    <br>
-                    <div class="col-sm-6">
-                      <span class="badge-nb-player"> <i class="fas fa-running"></i> <%= @castle.nb_players %> players </span>
-                    </div>
-                    <div class="description-quote mt-5">
-                      <p>"<%= @castle.description %>"</p>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 offest-sm-3">
-                    <%= link_to 'rent', new_castle_rental_path(@castle), class: 'btn btn-warning'%>
-                    </div>
-                    </div>
+    <div class="col-sm col-lg-8 offset-lg-2">
+        <h2 class="mt-3 text-center"><%= @castle.name.upcase %></h2>
+        <div class="castle-view">
+          <div class="row align-items-stretch ">
+              <div class="col-sm-12 col-md-6">
+                <div class="castle-img">
+                  <%= cl_image_tag @castle.photo, crop: :fill%>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="castle-details">
+                  <div class="castle-description">
+                    <h5><%= @castle.description %></h5>
                   </div>
+                  <div class="castle-players">
+                    <i class="fas fa-running"></i> <strong><%= @castle.nb_players %> players</strong>
+                  </div>
+                  <div class="castle-price">
+                    <i class="fas fa-euro-sign"></i> <%= @castle.day_price %> euros<small> per day</small>
+                  </div>
+                  <div class="castle-location">
+                    <i class="fas fa-map-marker-alt"></i> <%= @castle.address %>
+                  </div>
+                </div>
+                <div class="castle-owner-details">
+                  <div class="notification-content">
+                    <p>Meet the castle's owner</p>
+                    <p><strong><%= @castle.renter.first_name %> <%= @castle.renter.last_name %></strong></p>
+                    <p><small><i class="fas fa-info"></i> This person owns <%= @castle.renter.castles.count %> castle(s)</small></p>
+                  </div>
+                  <%= cl_image_tag @castle.renter.avatar, width: 150, crop: :fill, class: "avatar-large"%>
                 </div>
               </div>
             </div>
-          </div>
         </div>
-        <div>
-          <br>
-          <div class="card-footer">
-            <div>
-              <i class="fas fa-map-marker-alt"></i> <%= @castle.address %>
-            </div>
-            <div>
-              <%= @castle.day_price %>€ / day
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
