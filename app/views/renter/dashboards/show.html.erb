@@ -15,7 +15,11 @@
               </div>
             <% end %>
             <div class="col-md-6 my-1">
-            <div class="castle-renter-card"><i class="fas fa-plus mr-2"></i><%= link_to 'Add a castle', new_renter_castle_path %></div>
+              <%= link_to new_renter_castle_path, class: 'text-decoration-none' do %>
+                <div class="castle-renter-card castle-add-btn">
+                  <i class="fas fa-plus mr-2"></i> Add a castle
+                </div>
+              <% end %>
           </div>
           </div>
         </div>
@@ -25,16 +29,18 @@
             <div class="notification-dashboard">
               <%= cl_image_tag rental.player.avatar, width: 150, crop: :fill, class: "avatar-large"%>
               <div class="notification-content">
-                <p><small><%= rental.castle.name %></small></p>
-                <p><%= rental.starts_on %> to <%= rental.ends_on %></p>
+                <p><small>Request from <%= rental.player.first_name %> <%= rental.player.last_name %></small></p>
+                <p><strong><%= rental.castle.name %></strong></p>
+                <p>From <%= rental.starts_on.strftime("%d %B %Y") %> to <%= rental.ends_on.strftime("%d %B %Y") %></p>
+                <p>For <%= rental.total_price %>€</p>
               </div>
               <div class="notification-status">
                 <% if rental.status == 'accepted' %>
-                  <span class="badge badge-infos color-success">order accepted</span>
+                  <span class="color-success">order accepted</span>
                 <% elsif rental.status == 'denied'%>
-                  <span class="badge badge-infos color-deny">order denied</span>
+                  <span class="color-deny">order denied</span>
                 <% else %>
-                  <span class="badge badge-infos"><%= rental.status %></span>
+                  <span class="badge-infos"><%= rental.status %></span>
                 <% end %>
               </div>
               <div class="notification-actions">
