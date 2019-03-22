@@ -13,15 +13,10 @@ class RentalsController < ApplicationController
     @rental.castle = Castle.find(params[:castle_id])
     @rental.player = current_user
     if @rental.save
-      total_price
       redirect_to rentals_path
     else
       render :new
     end
-  end
-
-  def total_price
-    (@rental.starts_on - @rental.ends_on) * @rental.castle.day_price
   end
 
   private

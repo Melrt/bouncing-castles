@@ -29,7 +29,7 @@ flatpickr("#rental-dates", {
       const daysCount  = (endDate - beginningDate) / 60 / 60 / 24 / 1000
       const totalPrice = daysCount * dailyPrice
 
-      castleTotalPriceEl.innerText = `${totalPrice} €`
+      castleTotalPriceEl.innerText = `Rent for ${totalPrice} €`
 
       beginningDateInput.value = beginningDate
       endDateInput.value       = endDate
