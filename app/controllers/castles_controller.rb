@@ -7,6 +7,7 @@ class CastlesController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
   end
 
   private
