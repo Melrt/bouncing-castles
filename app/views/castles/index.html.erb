@@ -5,22 +5,26 @@
       <p>Start planning your party with these bouncing castles available</p>
     </div>
     <div class="row">
-      <% @castles.each do |castle| %>
-        <div class="col-sm-6 col-md-4">
-            <%=  link_to castle_path(castle), class: 'card-index-link' do %>
-              <div class="castle-index-card">
-                  <div class="castle-index-img">
-                    <%= cl_image_tag castle.photo, aspect_ratio: 1, crop: :fill %>
-                    <div class="castle-index-players"><i class="fas fa-running"></i> <%= castle.nb_players %>
+      <% if @castles.empty? %>
+        <p>There's no castle yet in this city!!</p>
+      <% else %>
+        <% @castles.each do |castle| %>
+          <div class="col-sm-6 col-md-4">
+              <%=  link_to castle_path(castle), class: 'card-index-link' do %>
+                <div class="castle-index-card">
+                    <div class="castle-index-img">
+                      <%= cl_image_tag castle.photo, aspect_ratio: 1, crop: :fill %>
+                      <div class="castle-index-players"><i class="fas fa-running"></i> <%= castle.nb_players %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="castle-index-card-body">
-                    <h5 class="castle-index-card-title"><%= castle.name.upcase %></h5>
-                    <%= castle.day_price %>€ <small>/day</small>
-                  </div>
-              </div>
-            <% end %>
-        </div>
+                    <div class="castle-index-card-body">
+                      <h5 class="castle-index-card-title"><%= castle.name.upcase %></h5>
+                      <%= castle.day_price %>€ <small>/day</small>
+                    </div>
+                </div>
+              <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
