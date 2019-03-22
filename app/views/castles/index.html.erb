@@ -2,12 +2,12 @@
   <div class="container text-center">
     <div class="page-intro m-3">
       <h1>BOUNCY CASTLES</h1>
-      <p>Start planning your party with these bouncing castles available</p>
-    </div>
-    <div class="row">
       <% if @castles.empty? %>
-        <p>There's no castle yet in this city!!</p>
+          <h5 class="m-5">There's no castle yet in this city!!</h5>
       <% else %>
+        <p>Start planning your party with these bouncing castles available</p>
+      </div>
+      <div class="row">
         <% @castles.each do |castle| %>
           <div class="col-sm-6 col-md-4">
               <%=  link_to castle_path(castle), class: 'card-index-link' do %>
