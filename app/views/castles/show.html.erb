@@ -42,9 +42,11 @@
         <div class="form-basics">
         <h3>Ask to play with <%= @castle.name %></h3>
         <%= simple_form_for [@castle, @rental] do |f| %>
-          <input type="text" id="rental-dates" placeholder="Select dates..." class='btn calendar-picker mt-2'>
+          <input type="text" id="rental-dates" placeholder="Select dates..." data-daily-price="<%= @castle.day_price %>" class='btn calendar-picker mt-2'>
+          <%= f.input :total_price, as: :integer, required: false, input_html: {class: "d-none"}, label: false %>
           <%= f.input :starts_on, as: :string, required: false, input_html: {id: 'date_start', class: "d-none"}, label: false %>
           <%= f.input :ends_on, as: :string, required: false, input_html: {id: 'date_end', class: "d-none"}, label: false %>
+          <div id="castle-total-price" class="mb-3"></div>
           <%= f.submit "Rent", class: "btn btn-warning btn-block" %>
         <% end %>
         </div>

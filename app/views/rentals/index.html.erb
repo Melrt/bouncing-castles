@@ -15,10 +15,9 @@
             </div>
             <div class="castle-index-card-body pb-3">
               <h5 class="castle-index-card-title"><%= rental.castle.name.upcase %></h5>
-                <div class="dates-badge"><strong><%= rental.starts_on.strftime("%d %B %Y") %>
+                <div class="dates-badge"><strong><%= rental.starts_on.strftime("%d %B %Y") if rental.starts_on %>
                   <br>
-                  <i class="fas fa-caret-right"></i> <%= rental.ends_on.strftime("%d %B %Y") %></strong>
-                </div>
+                  <i class="fas fa-caret-right"></i> <%= rental.ends_on.strftime("%d %B %Y") if rental.ends_on %></strong></div>
                 <% if rental.status == 'accepted' %>
                   <span class="text-success"><strong>order accepted</strong></span>
                 <% elsif rental.status == 'denied'%>

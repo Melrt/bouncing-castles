@@ -22,6 +22,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:starts_on, :ends_on)
+    params.require(:rental).permit(:starts_on, :ends_on, :total_price)
   end
 end
