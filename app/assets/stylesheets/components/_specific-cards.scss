@@ -65,6 +65,10 @@
 .castle-index-card-body {
   padding: 10px 0;
   position: relative;
+
+  .owner-info {
+    color : $medium-grey;
+  }
 }
 
 .castle-view {
