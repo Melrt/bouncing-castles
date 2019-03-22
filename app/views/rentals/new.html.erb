@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-8 offset-sm-2 mt-5">
       <h2>Ask to rent <%= @castle.name %></h2>
       <%= simple_form_for [@castle, @rental] do |f| %>
-        <%= f.input :starts_on %>
-        <%= f.input :ends_on %>
+        <%#= f.input :rental_dates, as: :string, required: false, input_html: {id: 'rental-dates'}, label: "Select days you want to rent" %>
+        <input type="text" id="rental-dates" placeholder="Select days you want to rent">
+        <%= f.input :starts_on, as: :string, required: false, input_html: {id: 'date_start', class: "d-none"}, label: false %>
+        <%= f.input :ends_on, as: :string, required: false, input_html: {id: 'date_end', class: "d-none"}, label: false %>
         <%= f.submit "Rent", class: "btn btn-primary" %>
       <% end %>
     </div>
