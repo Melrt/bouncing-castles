@@ -6,29 +6,31 @@
     <div class="row">
       <% @rentals.each do |rental| %>
       <div class="col-sm-6 col-md-4">
-        <div class="castle-index-card">
-          <div class="castle-index-img">
-            <%= cl_image_tag rental.castle.photo, width: 400, crop: :fill, class: 'card-img-top' %>
-            <div class="castle-index-players"><i class="fas fa-running"></i> <%= rental.castle.nb_players %>
+        <%=  link_to castle_path(rental.castle), class: 'card-index-link' do %>
+          <div class="castle-index-card">
+            <div class="castle-index-img">
+              <%= cl_image_tag rental.castle.photo, width: 400, crop: :fill, class: 'card-img-top' %>
+              <div class="castle-index-players"><i class="fas fa-running"></i> <%= rental.castle.nb_players %>
+              </div>
+            </div>
+            <div class="castle-index-card-body pb-3">
+              <h5 class="castle-index-card-title"><%= rental.castle.name.upcase %></h5>
+                <div class="dates-badge"><strong><%= rental.starts_on.strftime("%d %B %Y") %>
+                  <br>
+                  <i class="fas fa-caret-right"></i> <%= rental.ends_on.strftime("%d %B %Y") %></strong></div>
+                <% if rental.status == 'accepted' %>
+                  <span class="text-success"><strong>order accepted</strong></span>
+                <% elsif rental.status == 'denied'%>
+                  <span class="text-danger"><strong>order denied</strong></span>
+                <% else %>
+                  <span><%= rental.status %></span>
+                <% end %>
+                <strong><%= rental.total_price %>€</strong>
+                <br>
+                <div class="owner-info"><small>Order sent to <%= rental.castle.renter.first_name %></small></div>
             </div>
           </div>
-          <div class="castle-index-card-body pb-3">
-            <h5 class="castle-index-card-title"><%= rental.castle.name.upcase %></h5>
-              <div class="dates-badge"><strong><%= rental.starts_on.strftime("%d %B %Y") %>
-                <br>
-                <i class="fas fa-caret-right"></i> <%= rental.ends_on.strftime("%d %B %Y") %></strong></div>
-              <% if rental.status == 'accepted' %>
-                <span class="text-success"><strong>order accepted</strong></span>
-              <% elsif rental.status == 'denied'%>
-                <span class="text-danger"><strong>order denied</strong></span>
-              <% else %>
-                <span><%= rental.status %></span>
-              <% end %>
-              <strong><%= rental.total_price %>€</strong>
-              <br>
-              <div class="owner-info"><small>Order sent to <%= rental.castle.renter.first_name %></small></div>
-          </div>
-        </div>
+        <% end %>
       </div>
       <% end %>
     </div>

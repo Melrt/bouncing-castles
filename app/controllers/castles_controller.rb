@@ -3,10 +3,15 @@ class CastlesController < ApplicationController
   before_action :set_castle, only: [:show]
 
   def index
-    @castles = Castle.all
+    if params[:query].present?
+      @castles = Castle.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @castles = Castle.all
+    end
   end
 
   def show
+    @rental = Rental.new
   end
 
   private
