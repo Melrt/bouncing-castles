@@ -41,10 +41,13 @@
 }
 
 .castle-index-img {
-  width:100%;
   position: relative;
   border-radius: 2px;
   padding: 10px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .castle-index-players {
