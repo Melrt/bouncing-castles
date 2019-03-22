@@ -8,7 +8,6 @@
       <%= image_tag "logo.png", class: "rounded-circle" %>
     <% end %>
     <%= link_to 'All castles', castles_path, class: 'navbar-brand font-weight-bold ml-2' %>
-    <% if current_page?(controller: 'castles', action: 'index')  %>
       <form class="form-inline">
         <!-- <input class="form-control mr-sm-2" type="search" placeholder="ex: London..." aria-label="Search">
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button> -->
@@ -20,7 +19,6 @@
           %>
         <% end %>
       </form>
-    <% end %>
 
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
