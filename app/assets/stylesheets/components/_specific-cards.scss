@@ -30,7 +30,7 @@
   margin: 15px 0;
   background-color: $white;
   border-radius: 2px;
-  box-shadow: 0px 0px 5px $medium-grey;
+  box-shadow: 0px 0px 5px $light-medium-grey;
 
   &:hover {
     transition-duration: 250ms;
@@ -41,10 +41,13 @@
 }
 
 .castle-index-img {
-  width:100%;
   position: relative;
   border-radius: 2px;
   padding: 10px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .castle-index-players {
@@ -62,4 +65,71 @@
 .castle-index-card-body {
   padding: 10px 0;
   position: relative;
+
+  .owner-info {
+    color : $medium-grey;
+  }
+}
+
+.castle-view {
+  background-color: $white;
+  padding: 0 15px 15px 15px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 5px $light-medium-grey;
+}
+
+.castle-img {
+  margin: 15px auto 0 auto;
+  border-radius: 2px;
+  img  {
+    width: 100%;
+    border-radius: 2px;
+    border: 2px solid $light-grey;
+  }
+}
+
+.castle-details {
+  // background-color: $orange;
+  margin-top: 15px;
+  padding: 15px;
+}
+// -----------------
+
+.castle-owner-details {
+  display: flex;
+  align-items: center;
+  margin: 8px auto;
+  background: white;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: $secondary;
+  opacity: 0.8;
+
+  &:hover {
+    transition-duration: 250ms;
+    animation-timing-function: ease-in-out;
+    // transition-property: box-shadow, transform;
+    // box-shadow: 0px 0px 3px $medium-grey;
+    transform: scale(1.05);
+    opacity: 1;
+
+  }
+
+  .notification-content {
+    flex-grow: 1;
+    padding: 0 24px 0 0;
+  }
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  small {
+    color: $orange;
+    font-weight: bold;
+  }
+  .notification-status {
+    flex: 0 0 50px;
+
+  }
 }
