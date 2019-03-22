@@ -17,9 +17,9 @@
                       <div class="castle-index-players"><i class="fas fa-running"></i> <%= castle.nb_players %>
                       </div>
                     </div>
-                    <div class="castle-index-card-body">
+                    <div class="castle-index-card-body card-index-padding">
                       <h5 class="castle-index-card-title"><%= castle.name.upcase %></h5>
-                      <%= castle.day_price %>€ <small>/day</small>
+                      <i class="fas fa-map-marker-alt"></i> <%= castle.address %> | <%= castle.day_price %>€ <small>/day</small>
                     </div>
                 </div>
               <% end %>
