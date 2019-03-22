@@ -10,7 +10,7 @@
             <%=  link_to castle_path(castle), class: 'card-index-link' do %>
               <div class="castle-index-card">
                   <div class="castle-index-img">
-                    <%= cl_image_tag castle.photo, width: 400, crop: :fill, class: 'card-img-top' %>
+                    <%= cl_image_tag castle.photo, aspect_ratio: 1, crop: :fill %>
                     <div class="castle-index-players"><i class="fas fa-running"></i> <%= castle.nb_players %>
                     </div>
                   </div>
