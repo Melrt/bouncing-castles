@@ -17,7 +17,7 @@
     transition-duration: 250ms;
     animation-timing-function: ease-in-out;
     // transition-property: box-shadow, transform;
-    box-shadow: 0px 0px 3px $medium-grey;
+    box-shadow: 0px 0px 2px $light-medium-grey;
     transform: scale(1.05);
 
   }
@@ -36,7 +36,7 @@
     font-weight: bold;
   }
   .notification-status {
-    flex: 0 0 50px;
+    flex: 0 0 130px;
 
   }
   .notification-actions {
@@ -67,5 +67,10 @@
 
 }
 
+.castle-add-btn {
+  &:hover {
+    background-color: $yellow;
+  }
+}
 
 
